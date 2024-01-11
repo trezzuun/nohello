@@ -97,32 +97,22 @@
 <div id="toggleButton" onclick="toggleColor()">
     <img id="toggleImage" src="https://www.freeiconspng.com/uploads/crescent-moon-png-23.png" alt="Cow Image" width="30" height="30">
   </div>
-            <script>
-    var isDarkMode = false;
+           <script>
+    let isDarkMode = false;
 
-    function toggleColorAndScroll() {
-      var body = document.body;
-      var toggleImage = document.getElementById('toggleImage');
-
-      // Toggle color
-      if (isDarkMode) {
-        body.style.backgroundColor = '#fff';
-        toggleImage.src = 'https://www.freeiconspng.com/uploads/crescent-moon-png-23.png';
-      } else {
-        body.style.backgroundColor = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeNeR9LDD1mTYbQxhv40eQjPiJZv7NiJA5Y4xAqajtuA&s';
-        toggleImage.src = 'moon.png';
-      }
+    function toggleColor() {
+      const body = document.body;
+      const buttonImage = document.getElementById('buttonImage');
 
       isDarkMode = !isDarkMode;
+      body.style.backgroundColor = isDarkMode ? '#000' : '#fff';
+      buttonImage.src = isDarkMode ? 'https://www.freeiconspng.com/uploads/crescent-moon-png-23.png' : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeNeR9LDD1mTYbQxhv40eQjPiJZv7NiJA5Y4xAqajtuA&s';
 
-      // Scroll up or down
-      var scrollAmount = 500; // Adjust this value as needed
+      // Scroll down or up based on dark mode state
       if (isDarkMode) {
-        // Scroll down
-        window.scrollBy(0, scrollAmount);
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
       } else {
-        // Scroll up
-        window.scrollBy(0, -scrollAmount);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     }
   </script>
