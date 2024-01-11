@@ -111,7 +111,7 @@
      
     }
   </script>
-            <script>
+          <script>
     // Set the duration of the scroll animation in milliseconds
     const duration = 1000; // 1 second
 
@@ -143,8 +143,10 @@
       requestAnimationFrame(step);
     }
 
-    // Call the scrollDown function when the page loads
-    window.onload = scrollDown;
+    // Call the scrollDown function after a delay to allow the page to load
+    window.onload = function() {
+      setTimeout(scrollDown, 500); // 500 milliseconds delay
+    };
   </script>
             <div class="container nonos">
                 <div class="sections sectionleft">
