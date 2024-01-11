@@ -100,19 +100,30 @@
             <script>
     var isDarkMode = false;
 
-    function toggleColor() {
+    function toggleColorAndScroll() {
       var body = document.body;
       var toggleImage = document.getElementById('toggleImage');
 
+      // Toggle color
       if (isDarkMode) {
         body.style.backgroundColor = '#fff';
-        toggleImage.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeNeR9LDD1mTYbQxhv40eQjPiJZv7NiJA5Y4xAqajtuA&s';
-      } else {
-        body.style.backgroundColor = '#000';
         toggleImage.src = 'https://www.freeiconspng.com/uploads/crescent-moon-png-23.png';
+      } else {
+        body.style.backgroundColor = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeNeR9LDD1mTYbQxhv40eQjPiJZv7NiJA5Y4xAqajtuA&s';
+        toggleImage.src = 'moon.png';
       }
 
       isDarkMode = !isDarkMode;
+
+      // Scroll up or down
+      var scrollAmount = 500; // Adjust this value as needed
+      if (isDarkMode) {
+        // Scroll down
+        window.scrollBy(0, scrollAmount);
+      } else {
+        // Scroll up
+        window.scrollBy(0, -scrollAmount);
+      }
     }
   </script>
             <div class="container nonos">
