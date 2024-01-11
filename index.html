@@ -111,6 +111,41 @@
      
     }
   </script>
+            <script>
+    // Set the duration of the scroll animation in milliseconds
+    const duration = 1000; // 1 second
+
+    // Calculate the total distance to scroll
+    const totalScrollDistance = document.body.scrollHeight - window.innerHeight;
+
+    // Calculate the distance to scroll in each animation frame
+    const scrollStep = totalScrollDistance / duration * 10;
+
+    // Function to scroll down
+    function scrollDown() {
+      let scrollPosition = 0;
+
+      function step() {
+        // Calculate the next scroll position
+        scrollPosition += scrollStep;
+
+        // Scroll the window
+        window.scrollTo(0, scrollPosition);
+
+        // Check if the end of the page is reached
+        if (scrollPosition < totalScrollDistance) {
+          // Continue scrolling in the next animation frame
+          requestAnimationFrame(step);
+        }
+      }
+
+      // Start the scrolling animation
+      requestAnimationFrame(step);
+    }
+
+    // Call the scrollDown function when the page loads
+    window.onload = scrollDown;
+  </script>
             <div class="container nonos">
                 <div class="sections sectionleft">
                     <h2 class="section-title">❌ Avoid this</h2>
