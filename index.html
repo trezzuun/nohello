@@ -96,8 +96,8 @@
             </div>
 <div id="toggleButton" onclick="toggleColor()">
     <img id="toggleImage" src="https://www.freeiconspng.com/uploads/crescent-moon-png-23.png" alt="Cow Image" width="30" height="30">
-  </div>
-           <script>
+  </div>https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeNeR9LDD1mTYbQxhv40eQjPiJZv7NiJA5Y4xAqajtuA&s
+<script>
     let isDarkMode = false;
 
     function toggleColor() {
@@ -110,9 +110,11 @@
 
       // Scroll down or up based on dark mode state
       if (isDarkMode) {
-        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        document.body.scrollTop = document.body.scrollHeight;
+        document.documentElement.scrollTop = document.documentElement.scrollHeight;
       } else {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
       }
     }
   </script>
