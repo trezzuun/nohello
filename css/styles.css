@@ -162,6 +162,11 @@ body {
       overflow: hidden;
       transition: background-color 0.5s;
       font-family: Arial, sans-serif;
+    color: #ffffff;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 blockquote,
