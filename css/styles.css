@@ -161,6 +161,10 @@ body {
       margin: 0;
       padding: 0;
       overflow: hidden;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 blockquote,
