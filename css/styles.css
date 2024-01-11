@@ -157,13 +157,10 @@ body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     font-size: 19px;
-    background-color: #1b1b1b;
-    color: #ffffff;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
     transition: background-color 0.5s ease;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
 }
 
 blockquote,
