@@ -157,10 +157,11 @@ body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     font-size: 19px;
-    transition: background-color 0.5s ease;
-      margin: 0;
+    margin: 0;
       padding: 0;
       overflow: hidden;
+      transition: background-color 0.5s;
+      font-family: Arial, sans-serif;
 }
 
 blockquote,
@@ -523,12 +524,18 @@ h1.name {
       width: 50px;
       height: 50px;
       background-color: #fff;
-      border: none;
+      border: 2px solid #333;
+      border-radius: 50%;
       cursor: pointer;
       outline: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.3s, transform 0.3s;
     }
 
-::-webkit-scrollbar-thumb:hover {
-    background: #303030;
-}
-/* END OF Custom Scrollbar */
+    #toggleButton img {
+      width: 80%;
+      height: 80%;
+      border-radius: 50%;
+    }
