@@ -29,36 +29,6 @@ function loadLanguages() {
     .catch((error) => console.log(error));
 }
 
-// Function to translate the page content
-function translateContent() {
-  const selectedLanguage = document.getElementById("language-select").value;
-
-  // Fetch translation from the Google Translate API
-  fetch(
-    `https://translation.googleapis.com/language/translate/v2?key=AIzaSyCkFHbglJneGX4zmYzi6szP7PjxfKkS61Y&q=Hello%20World!&target=${selectedLanguage}`
-  )
-    .then((response) => response.json())
-    .then((data) => {
-      const translatedText = data.data.translations[0].translatedText;
-
-      // Update the content with translated text
-      document.querySelector("h1").innerHTML = translatedText;
-      document.querySelector("p").innerHTML = translatedText;
-    })
-    .catch((error) => console.log(error));
-}
-
-// Load supported languages and set up event listener for translation
-window.onload = function () {
-  loadLanguages();
-
-  const translateButton = document.getElementById("translate-button");
-  translateButton.addEventListener("click", translateContent);
-};
-
-
-
-
 // STOP PEOPLE FROM STEALING
 document.addEventListener("contextmenu", function (e) {
   e.preventDefault();
@@ -82,3 +52,35 @@ document.onkeydown = function (e) {
 function navigateTo(page) {
   window.location.href = `${page}.html`;
 }
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const modeToggleBtn = document.getElementById('modeToggle');
+  const body = document.body;
+
+  // Check user's preference from previous visits
+  if (localStorage.getItem('darkMode') === 'enabled') {
+      enableDarkMode();
+  }
+
+  // Toggle between dark and light mode
+  modeToggleBtn.addEventListener('click', function () {
+      if (body.classList.contains('dark-mode')) {
+          disableDarkMode();
+      } else {
+          enableDarkMode();
+      }
+  });
+
+  // Function to enable dark mode
+  function enableDarkMode() {
+      body.classList.add('dark-mode');
+      localStorage.setItem('darkMode', 'enabled');
+  }
+
+  // Function to disable dark mode
+  function disableDarkMode() {
+      body.classList.remove('dark-mode');
+      localStorage.setItem('darkMode', null);
+  }
+});

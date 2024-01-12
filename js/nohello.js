@@ -48,7 +48,7 @@ const typed2 = new Typed("#strike", {
   ],
   typeSpeed: 80,
   backSpeed: 60,
-  smartBackspace: false,
+  smartBackspace: true,
   loop: true,
   shuffle: false,
   backDelay: 2000,
